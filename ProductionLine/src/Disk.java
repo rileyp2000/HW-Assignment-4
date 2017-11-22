@@ -3,6 +3,7 @@
  */
 
 /**
+ * THis class represents a disk that will become part of the production line
  * @author Patrick
  *
  */
@@ -15,6 +16,10 @@ public class Disk implements Comparable<Disk> {
 		radius = r;
 	}
 	
+	/**
+	 * gets the radius of the disk
+	 * @return the radius of the disk
+	 */
 	public int getRadius() {
 		return radius;
 	}
