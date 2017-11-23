@@ -17,12 +17,40 @@ public class ProductionLine {
 	}
 	
 	/**
+	 * gets the input queue
+	 * @return the input
+	 */
+	public LinkedList<Disk> getInput() {
+		return input;
+	}
+
+
+	/**
+	 * gets the output queue
+	 * @return the output queue
+	 */
+	public LinkedList<Tower> getOutput() {
+		return output;
+	}
+
+
+	/**
+	 * gets the disks on the "robot arm"
+	 * @return the disks on the arm
+	 */
+	public Tower getRobotArm() {
+		return robotArm;
+	}
+
+	
+	/**
 	 * adds a disk to the input queue
 	 * @param d the disk to be added
 	 */
 	public void addDisk(Disk d) {
 		input.add(d);
 	}
+	
 	
 	/**
 	 * this creates the inverted disk tower on the robot's arm
@@ -34,6 +62,7 @@ public class ProductionLine {
 			robotArm.push(input.remove());
 	}
 	
+	
 	/**
 	 * This unloads the tower from the robot arm to the output queue
 	 */
@@ -43,6 +72,16 @@ public class ProductionLine {
 			toOutQueue.push(d);
 		}
 		output.add(toOutQueue);
+	}
+	
+	/**
+	 * this will operate the robot
+	 */
+	public void run(){
+		while(!input.isEmpty()){
+			process();
+			unloadRobot();
+		}		
 	}
 	
 	/**

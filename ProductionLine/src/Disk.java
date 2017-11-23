@@ -28,5 +28,8 @@ public class Disk implements Comparable<Disk> {
 	public int compareTo(Disk d2) {
 		return radius - d2.getRadius();
 	}
-
+	
+	public String toString(){
+		return "Disk with radius " + radius;
+	}
 }

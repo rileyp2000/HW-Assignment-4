@@ -1,0 +1,14 @@
+Testing Disks: 
+d1: Disk with radius 5
+d2: Disk with radius 4
+d3: Disk with radius 3
+d4: Disk with radius 5
+Tower of all previous disks: [Disk with radius 5, Disk with radius 4, Disk with radius 3, Disk with radius 5]
+
+
+Testing ProductionLine: 
+Input Queue before start: [Disk with radius 5, Disk with radius 1, Disk with radius 2, Disk with radius 8, Disk with radius 8, Disk with radius 9, Disk with radius 6, Disk with radius 6, Disk with radius 5, Disk with radius 2, Disk with radius 4, Disk with radius 7, Disk with radius 1, Disk with radius 3, Disk with radius 5]
+Output Queue before start: []
+Input Queue after Processing: []
+Output Queue after Processing: 
+[Disk with radius 5][Disk with radius 5, Disk with radius 1, Disk with radius 2, Disk with radius 8, Disk with radius 8, Disk with radius 9][Disk with radius 5, Disk with radius 1, Disk with radius 2, Disk with radius 8, Disk with radius 8, Disk with radius 9, Disk with radius 6, Disk with radius 6][Disk with radius 5, Disk with radius 1, Disk with radius 2, Disk with radius 8, Disk with radius 8, Disk with radius 9, Disk with radius 6, Disk with radius 6, Disk with radius 5][Disk with radius 5, Disk with radius 1, Disk with radius 2, Disk with radius 8, Disk with radius 8, Disk with radius 9, Disk with radius 6, Disk with radius 6, Disk with radius 5, Disk with radius 2, Disk with radius 4, Disk with radius 7][Disk with radius 5, Disk with radius 1, Disk with radius 2, Disk with radius 8, Disk with radius 8, Disk with radius 9, Disk with radius 6, Disk with radius 6, Disk with radius 5, Disk with radius 2, Disk with radius 4, Disk with radius 7, Disk with radius 1, Disk with radius 3, Disk with radius 5]
