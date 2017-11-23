@@ -68,9 +68,8 @@ public class ProductionLine {
 	 */
 	public void unloadRobot() {
 		Tower toOutQueue = new Tower();
-		for (Disk d : robotArm) {
-			toOutQueue.push(d);
-		}
+		while(!robotArm.isEmpty())
+			toOutQueue.push(robotArm.pop());
 		output.add(toOutQueue);
 	}
 	
