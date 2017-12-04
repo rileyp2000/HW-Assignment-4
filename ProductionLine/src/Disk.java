@@ -29,6 +29,7 @@ public class Disk implements Comparable<Disk> {
 		return radius - d2.getRadius();
 	}
 	
+	@Override
 	public String toString(){
 		return "Disk with radius " + radius;
 	}

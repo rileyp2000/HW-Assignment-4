@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class ProductionLineTest {
 
 	/**
-	 * @param args
+	 * @param args command line args
 	 */
 	public static void main(String[] args) {
 		String fileName = "";
@@ -33,7 +33,7 @@ public class ProductionLineTest {
 		}
 
 		Random rand = new Random(1388420);
-
+		/*
 		out.println("Testing Disks: ");
 		Disk d1 = new Disk(5);
 		out.println("d1: " + d1);
@@ -49,7 +49,7 @@ public class ProductionLineTest {
 		t1.add(d3);
 		t1.add(d4);
 		out.println("Tower of all previous disks: " + t1);
-
+*/
 		out.println("\n\nTesting ProductionLine: ");
 		ProductionLine p1 = new ProductionLine();
 		for (int i = 0; i < 15; i++)

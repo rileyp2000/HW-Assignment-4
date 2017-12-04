@@ -18,7 +18,7 @@ public class ProductionLine {
 	
 	/**
 	 * gets the input queue
-	 * @return the input
+	 * @return the input queue
 	 */
 	public LinkedList<Disk> getInput() {
 		return input;
@@ -53,7 +53,7 @@ public class ProductionLine {
 	
 	
 	/**
-	 * this creates the inverted disk tower on the robot's arm
+	 * this creates the inverted disk tower on the robot's arm if there are things left in the input queue and then removes it from it
 	 */
 	public void process() {
 		if (!input.isEmpty())
@@ -64,7 +64,7 @@ public class ProductionLine {
 	
 	
 	/**
-	 * This unloads the tower from the robot arm to the output queue
+	 * This unloads the tower from the robot arm to the output queue in the correct way
 	 */
 	public void unloadRobot() {
 		Tower toOutQueue = new Tower();
@@ -74,7 +74,7 @@ public class ProductionLine {
 	}
 	
 	/**
-	 * this will operate the robot
+	 * this will operate the robot until there are not input disks left
 	 */
 	public void run(){
 		while(!input.isEmpty()){
