@@ -50,9 +50,9 @@ public class ProductionLineTest {
 		t1.add(d4);
 		out.println("Tower of all previous disks: " + t1);
 */
-		out.println("\n\nTesting ProductionLine: ");
+		out.println("Testing ProductionLine: ");
 		ProductionLine p1 = new ProductionLine();
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < 20; i++)
 			p1.addDisk(new Disk(rand.nextInt(9)+1));
 		
 		out.println("Input Queue before start: " + p1.getInput());
@@ -63,7 +63,7 @@ public class ProductionLineTest {
 		out.println("Input Queue after Processing: " + p1.getInput());
 		out.println("Output Queue after Processing: ");
 		while(!p1.getOutput().isEmpty())
-			out.print(p1.removeTower());
+			out.println(p1.removeTower());
 		
 		
 		keyboard.close();
