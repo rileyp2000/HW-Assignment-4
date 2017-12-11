@@ -32,7 +32,8 @@ public class ProductionLineTest {
 			e.printStackTrace();
 		}
 
-		Random rand = new Random(1388420);
+		//Random rand = new Random(1388420);
+		Random rand = new Random();
 		/*
 		out.println("Testing Disks: ");
 		Disk d1 = new Disk(5);

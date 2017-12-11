@@ -14,5 +14,14 @@ public class Tower extends Stack<Disk> {
 		super();
 	}
 	
+	public String toString() {
+		String ret = "";
+		while(!this.isEmpty()) {
+			ret += this.pop();
+			ret += "\n";
+		}
+		return ret;
+	}
+
 	
 }

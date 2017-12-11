@@ -31,6 +31,13 @@ public class Disk implements Comparable<Disk> {
 	
 	@Override
 	public String toString(){
-		return "Disk with radius " + radius;
+		int num = this.getRadius();
+		String ret = num + " ";
+		while(num > 0) {
+			ret += "X";
+			num--;
+		}
+		
+		return ret;
 	}
 }
