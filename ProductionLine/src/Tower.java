@@ -8,12 +8,13 @@ import java.util.Stack;
 public class Tower extends Stack<Disk> {
 	
 	/**
-	 * creates a tower that is a stack of disks
+	 * Creates a tower that is a stack of disks
 	 */
 	public Tower() {
 		super();
 	}
 	
+	@Override
 	public String toString() {
 		String ret = "";
 		while(!this.isEmpty()) {

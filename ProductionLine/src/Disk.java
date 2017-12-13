@@ -12,13 +12,17 @@ public class Disk implements Comparable<Disk> {
 	
 	private int radius;
 	
+	/**
+	 * Creates a disk with a radius
+	 * @param r Radius of the disk to be created
+	 */
 	public Disk(int r) {
 		radius = r;
 	}
 	
 	/**
-	 * gets the radius of the disk
-	 * @return the radius of the disk
+	 * Gets the radius of the disk
+	 * @return The radius of the disk
 	 */
 	public int getRadius() {
 		return radius;

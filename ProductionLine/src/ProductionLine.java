@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 /**
- * This class represnts a Production line, where disks are assembled into towers
- * @author Patrick
+ * This class represents a Production line, where disks are assembled into ascending towers
+ * @author Patrick Riley
  *
  */
 public class ProductionLine {
@@ -85,7 +85,7 @@ public class ProductionLine {
 	
 	/**
 	 * removes a tower from the output queue and returns it
-	 * @return a tower
+	 * @return the first tower in the queue
 	 */
 	public Tower removeTower() {
 		return output.remove();
