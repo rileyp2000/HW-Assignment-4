@@ -17,6 +17,8 @@ public class Disk implements Comparable<Disk> {
 	 * @param r Radius of the disk to be created
 	 */
 	public Disk(int r) {
+		if(r <= 0 )
+			throw new IllegalArgumentException("Not a valid radius");
 		radius = r;
 	}
 	
