@@ -13,7 +13,7 @@ class Tower {
 	}
 
 	toString() {
-		String ret = "";
+		var ret = "";
 		while(!this.disks.isEmpty()) {
 			ret += this.pop();
 			ret += "\n";
