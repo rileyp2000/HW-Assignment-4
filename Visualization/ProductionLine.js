@@ -27,23 +27,25 @@ class ProductionLine{
         var toSend = this.input.shift();
         console.log("About to add: " + toSend);
         this.robotArm.push(toSend);
+
       }
-      console.log(this.input);
-      var c = 0;
-      while (this.input.length !== 0 && this.input[this.input.length - 1].getRadius() >= this.robotArm[this.robotArm.length - 1].getRadius()){
+      while (this.input.length !== 0 && this.input[this.input.length - 1].getRadius() >= this.robotArm.getDisk(this.robotArm.size() - 1).getRadius()){
         this.robotArm.push(this.input.shift());
-        console.log("C: " + c);
-        c++;
       }
+      console.log(this.robotArm);
     }
 
     unloadRobot(){
       var toOutQueue = new Tower();
-  		while(this.robotArm.length !== 0){
-  			this.toOutQueue.push(this.robotArm.pop());
+      console.log(this.robotArm);
+      //toOutQueue.push(new Disk(3));
+  		while(this.robotArm.size() !== 0){
+          var top = this.robotArm.pop();
+          toOutQueue.push(top);
+          console.log(top);
       }
-  		this.output.add(toOutQueue);
-      console.log(toOutQueue);
+  		this.output.push(toOutQueue);
+      console.log("To Out: " + toOutQueue);
     }
 
     run(){

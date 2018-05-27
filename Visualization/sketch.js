@@ -1,4 +1,4 @@
-var inputField, productionLine, header, itemsInQueue, output;
+var inputField, productionLine, header, itemsInQueue, output,towers;
 function setup(){
   createCanvas(windowWidth, windowHeight);
   header = createElement('h2', "Production Line Visualized");
@@ -14,6 +14,7 @@ function setup(){
   */
   productionLine = new ProductionLine();
 
+  productionLine.addDisk(new Disk(5));
   var ct = 1;
   while(ct < 10){
     var d = new Disk(ct);
@@ -24,7 +25,12 @@ function setup(){
   itemsInQueue.position(0, 40);
   productionLine.run();
 
-  output = createP("Result: " + productionLine.getOutput());
+  towers = [];
+  while(productionLine.getOutput.length !== 0){
+    towers.push(removeTower());
+  }
+
+  output = createP("Result: " + towers);
   output.position(0, 60);
 
 
