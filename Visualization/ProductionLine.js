@@ -19,32 +19,42 @@ class ProductionLine{
     }
 
     addDisk(d){
-      input.add(d);
+      this.input.push(d);
     }
 
     process(){
-      if (!input.isEmpty())
-        robotArm.push(input.shift());
-      while (!input.isEmpty() && input.peek().getRadius() >= robotArm.peek().getRadius()){
-        robotArm.push(input.shift());
+      if (this.input.length !== 0){
+        var toSend = this.input.shift();
+        console.log("About to add: " + toSend);
+        this.robotArm.push(toSend);
+      }
+      console.log(this.input);
+      var c = 0;
+      while (this.input.length !== 0 && this.input[this.input.length - 1].getRadius() >= this.robotArm[this.robotArm.length - 1].getRadius()){
+        this.robotArm.push(this.input.shift());
+        console.log("C: " + c);
+        c++;
       }
     }
 
     unloadRobot(){
       var toOutQueue = new Tower();
-  		while(!robotArm.isEmpty())
-  			toOutQueue.push(robotArm.pop());
-  		output.add(toOutQueue);
+  		while(this.robotArm.length !== 0){
+  			this.toOutQueue.push(this.robotArm.pop());
+      }
+  		this.output.add(toOutQueue);
+      console.log(toOutQueue);
     }
 
     run(){
-  		while(!input.isEmpty()){
-  			process();
-  			unloadRobot();
+  		while(this.input.length !== 0){
+        console.log("Next thing in input is: " + this.input[0]);
+  			this.process();
+  			this.unloadRobot();
   		}
   	}
 
     removeTower() {
-  		return output.remove();
+  		return this.output.remove();
   	}
 }

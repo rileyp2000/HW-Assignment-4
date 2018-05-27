@@ -1,14 +1,14 @@
 class Disk {
 
   constructor(rad){
-    if(r <= 0 )
+    if(rad <= 0 )
       throw "Not a valid radius";
 
     this.radius = rad;
   }
 
   getRadius(){
-    return radius;
+    return this.radius;
   }
 
   compareTo(disk2){
@@ -16,7 +16,7 @@ class Disk {
   }
 
   toString(){
-    return "Radius: " + this.radius;
+    return this.radius;
   }
 
 }

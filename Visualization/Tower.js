@@ -5,15 +5,15 @@ class Tower {
 	}
 
 	pop(){
-		return disks.pop();
+		return this.disks.pop();
 	}
 
 	push(disk){
-		disks.push(disk);
+		this.disks.push(disk);
 	}
 
 	toString() {
-		var ret = "";
+		var ret = "Tower with: ";
 		while(!this.disks.isEmpty()) {
 			ret += this.pop();
 			ret += "\n";
