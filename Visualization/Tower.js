@@ -26,8 +26,9 @@ class Tower {
 		var ret = "Tower with: ";
 		while(this.disks.length !== 0) {
 			ret += this.pop();
-			ret += "\n";
+			ret += ", ";
 		}
+		ret += "HI";
 		return ret;
 	}
 

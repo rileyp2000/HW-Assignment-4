@@ -29,8 +29,10 @@ class ProductionLine{
         this.robotArm.push(toSend);
 
       }
-      while (this.input.length !== 0 && this.input[this.input.length - 1].getRadius() >= this.robotArm.getDisk(this.robotArm.size() - 1).getRadius()){
-        this.robotArm.push(this.input.shift());
+      while (this.input.length !== 0 && this.input[0].getRadius() >= this.robotArm.getDisk(this.robotArm.size() - 1).getRadius()){
+        var toS = this.input.shift();
+        console.log("About to add: " + toS);
+        this.robotArm.push(toS);
       }
       console.log(this.robotArm);
     }

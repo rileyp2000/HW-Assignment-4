@@ -1,4 +1,6 @@
 var inputField, productionLine, header, itemsInQueue, output,towers;
+
+
 function setup(){
   createCanvas(windowWidth, windowHeight);
   header = createElement('h2', "Production Line Visualized");
@@ -21,8 +23,10 @@ function setup(){
     productionLine.addDisk(d);
     ct++;
   }
+
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
   itemsInQueue.position(0, 40);
+  
   productionLine.run();
 
   towers = [];
