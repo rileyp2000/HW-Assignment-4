@@ -25,13 +25,12 @@ class ProductionLine{
     process(){
       if (this.input.length !== 0){
         var toSend = this.input.shift();
-        console.log("About to add: " + toSend);
+        //console.log("About to add: " + toSend);
         this.robotArm.push(toSend);
-
       }
       while (this.input.length !== 0 && this.input[0].getRadius() >= this.robotArm.getDisk(this.robotArm.size() - 1).getRadius()){
         var toS = this.input.shift();
-        console.log("About to add: " + toS);
+        //console.log("About to add: " + toS);
         this.robotArm.push(toS);
       }
       //console.log(this.robotArm);
@@ -46,14 +45,14 @@ class ProductionLine{
           toOutQueue.push(top);
           //console.log(top);
       }
-  		this.output.push(toOutQueue);
+  		this.output.push(toOutQueue.copy());
       //console.log("To Out: " + this.output[this.output.length - 1]);
-      console.log("Just added: " + this.output[this.output.length - 1] + "\n Current output queue: " + productionLine.getOutput());
+      console.log("\nCurrent output queue: " + productionLine.getOutput());
     }
 
     run(){
   		while(this.input.length !== 0){
-        console.log("Next thing in input is: " + this.input[0]);
+        //console.log("Next thing in input is: " + this.input[0]);
   			this.process();
   			this.unloadRobot();
   		}

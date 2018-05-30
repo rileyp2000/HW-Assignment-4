@@ -16,10 +16,11 @@ function setup(){
   */
   productionLine = new ProductionLine();
   randomSeed(8675309);
-  productionLine.addDisk(new Disk(5));
   var ct = 1;
   while(ct < 10){
-    var d = new Disk(round(random(1, 15)));
+    let rnd = round(random(1, 15));
+    var d = new Disk(rnd);
+    //console.log(rnd);
     productionLine.addDisk(d);
     ct++;
   }
@@ -28,18 +29,26 @@ function setup(){
   itemsInQueue.position(0, 40);
 
   productionLine.run();
+  var out = "";
+  /*for(let i = 0; i < productionLine.output.length; i++){
+    /*out += productionLine.output[i];
+    out += "\n";
+    //productionLine.output[i].setY(30 * productionLine.output[i].size());
+    productionLine.output[i].display();
+  }*/
 
-  //towers = [];
-  //while(productionLine.getOutput().length !== 0){
-    //towers.push(productionLine.removeTower());
-  //}
-
-  //output = createP("Result: " + towers);
+  //output = createP("Result: \n" + out);
   //output.position(0, 60);
+
 
 
 }
 
 function draw(){
-
+  var offset = 50;
+  for(let i = 0; i < productionLine.output.length; i++){
+    let lng = (productionLine.output[i].size() * 25) + 25;
+    productionLine.output[i].display(30, offset);
+    offset += lng;
+  }
 }
