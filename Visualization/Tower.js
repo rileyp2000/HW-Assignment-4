@@ -22,13 +22,19 @@ class Tower {
 		return this.disks.length;
 	}
 
+	copy(){
+		var cop = [];
+		for(let i = 0; i < this.disks.length; i++){
+			cop[i] = this.disks[i].copy();
+		}
+	}
+
 	toString() {
 		var ret = "Tower with: ";
 		while(this.disks.length !== 0) {
 			ret += this.pop();
 			ret += ", ";
 		}
-		ret += "HI";
 		return ret;
 	}
 

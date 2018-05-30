@@ -11,6 +11,10 @@ class Disk {
     return this.radius;
   }
 
+  copy(){
+    return new Disk(this.radius);
+  }
+
   compareTo(disk2){
     return this.getRadius() - disk2.getRadius();
   }

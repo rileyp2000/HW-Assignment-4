@@ -15,27 +15,27 @@ function setup(){
   button.position(input.x + input.width, 65);
   */
   productionLine = new ProductionLine();
-
+  randomSeed(8675309);
   productionLine.addDisk(new Disk(5));
   var ct = 1;
   while(ct < 10){
-    var d = new Disk(ct);
+    var d = new Disk(round(random(1, 15)));
     productionLine.addDisk(d);
     ct++;
   }
 
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
   itemsInQueue.position(0, 40);
-  
+
   productionLine.run();
 
-  towers = [];
-  while(productionLine.getOutput.length !== 0){
-    towers.push(removeTower());
-  }
+  //towers = [];
+  //while(productionLine.getOutput().length !== 0){
+    //towers.push(productionLine.removeTower());
+  //}
 
-  output = createP("Result: " + towers);
-  output.position(0, 60);
+  //output = createP("Result: " + towers);
+  //output.position(0, 60);
 
 
 }

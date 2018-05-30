@@ -34,20 +34,21 @@ class ProductionLine{
         console.log("About to add: " + toS);
         this.robotArm.push(toS);
       }
-      console.log(this.robotArm);
+      //console.log(this.robotArm);
     }
 
     unloadRobot(){
       var toOutQueue = new Tower();
-      console.log(this.robotArm);
+      //console.log(this.robotArm);
       //toOutQueue.push(new Disk(3));
   		while(this.robotArm.size() !== 0){
           var top = this.robotArm.pop();
           toOutQueue.push(top);
-          console.log(top);
+          //console.log(top);
       }
   		this.output.push(toOutQueue);
-      console.log("To Out: " + toOutQueue);
+      //console.log("To Out: " + this.output[this.output.length - 1]);
+      console.log("Just added: " + this.output[this.output.length - 1] + "\n Current output queue: " + productionLine.getOutput());
     }
 
     run(){
@@ -59,6 +60,6 @@ class ProductionLine{
   	}
 
     removeTower() {
-  		return this.output.remove();
+  		return this.output.pop();
   	}
 }
