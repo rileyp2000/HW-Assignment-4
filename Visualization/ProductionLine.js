@@ -68,7 +68,7 @@ class ProductionLine{
 
     run(){
   		while(this.input.length !== 0){
-  			this.drawInput();
+  			//this.drawInput();
         this.process();
   			this.unloadRobot();
   		}

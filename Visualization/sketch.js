@@ -45,6 +45,7 @@ function draw(){
     productionLine.output[i].display(30, offset);
     offset += lng;
   }*/
+  productionLine.drawInput();
   fill(0);
   rect(10, windowHeight * .8, windowWidth * .40, 20, 10);
   rect(windowWidth * .5, windowHeight * .8 - 80, 50, 100, 10);
