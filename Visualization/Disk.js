@@ -36,7 +36,7 @@ class Disk {
 
   display(){
     fill(0,255,255);
-    rect(this.x, this.y, this.radius * 10, 15, 10);
+    rect(this.x, this.y, this.radius * 10, 25, 10);
   }
 
   toString(){

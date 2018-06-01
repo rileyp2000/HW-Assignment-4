@@ -22,6 +22,19 @@ class ProductionLine{
       this.input.push(d);
     }
 
+    drawInput(){
+      let inLen = windowWidth * .40;
+      console.log(inLen);
+      let y = windowHeight * .8 - 30;
+      for(let inp of this.input){
+        let x = inLen - ((10 * inp.getRadius()) - 5);
+        inp.coord(x,y);
+        inp.display();
+        inLen = x -10;
+        console.log(inLen);
+      }
+    }
+
     process(){
       if (this.input.length !== 0){
         var toSend = this.input.shift();
@@ -47,12 +60,12 @@ class ProductionLine{
       }
   		this.output.push(toOutQueue.copy());
       //console.log("To Out: " + this.output[this.output.length - 1]);
-      console.log("\nCurrent output queue: " + productionLine.getOutput());
+      //console.log("\nCurrent output queue: " + productionLine.getOutput());
     }
 
     run(){
+      this.drawInput();
   		while(this.input.length !== 0){
-        //console.log("Next thing in input is: " + this.input[0]);
   			this.process();
   			this.unloadRobot();
   		}

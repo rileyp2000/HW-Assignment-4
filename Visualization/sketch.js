@@ -5,18 +5,10 @@ function setup(){
   createCanvas(windowWidth, windowHeight);
   header = createElement('h2', "Production Line Visualized");
   header.position(0,0);
-/*
-  prompt = createP("Add a disk to the queue!");
-  prompt.position(20, 25);
-  input = createInput();
-  input.position(20, 65);
 
-  button = createButton('submit');
-  button.position(input.x + input.width, 65);
-  */
   productionLine = new ProductionLine();
   randomSeed(8675309);
-  var ct = 1;
+  var ct = 0;
   while(ct < 10){
     let rnd = round(random(1, 15));
     var d = new Disk(rnd);
@@ -24,6 +16,8 @@ function setup(){
     productionLine.addDisk(d);
     ct++;
   }
+  //productionLine.addDisk(new Disk(3));
+  //productionLine.addDisk(new Disk(2));
 
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
   itemsInQueue.position(0, 40);
@@ -45,10 +39,15 @@ function setup(){
 }
 
 function draw(){
-  var offset = 50;
+  /*var offset = 50;
   for(let i = 0; i < productionLine.output.length; i++){
     let lng = (productionLine.output[i].size() * 25) + 25;
     productionLine.output[i].display(30, offset);
     offset += lng;
-  }
+  }*/
+
+  fill(0);
+  rect(10, windowHeight * .8, windowWidth * .40, 20, 10);
+  rect(windowWidth * .5, windowHeight * .8 - 80, 50, 100, 10);
+  rect(windowWidth * .6, windowHeight * .8, windowWidth * .35, 20, 10);
 }
