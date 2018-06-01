@@ -23,6 +23,9 @@ class ProductionLine{
     }
 
     drawInput(){
+      noStroke();
+      fill(255);
+      rect(10, windowHeight * .8 - 35, windowWidth * .40, 35);
       let inLen = windowWidth * .40;
       console.log(inLen);
       let y = windowHeight * .8 - 30;
@@ -64,9 +67,9 @@ class ProductionLine{
     }
 
     run(){
-      this.drawInput();
   		while(this.input.length !== 0){
-  			this.process();
+  			this.drawInput();
+        this.process();
   			this.unloadRobot();
   		}
   	}
