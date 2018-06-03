@@ -25,10 +25,10 @@ class ProductionLine{
     drawInput(){
       noStroke();
       fill(255);
-      rect(10, windowHeight * .8 - 35, windowWidth * .40, 35);
+      //rect(0, windowHeight * .8 - 35, windowWidth * .40 +10, 35);
       let inLen = windowWidth * .40;
       console.log(inLen);
-      let y = windowHeight * .8 - 30;
+      let y = windowHeight * .8 - 20;
       for(let inp of this.input){
         let x = inLen - ((10 * inp.getRadius()) - 5);
         inp.coord(x,y);
@@ -36,6 +36,13 @@ class ProductionLine{
         inLen = x -10;
         console.log(inLen);
       }
+    }
+
+    drawRobotArm(){
+      noStroke();
+      let y = windowHeight * .8 - 80;
+      let mid = windowWidth * .5 + 15;
+      this.robotArm.display(mid, y);
     }
 
     process(){
@@ -53,6 +60,7 @@ class ProductionLine{
     }
 
     unloadRobot(){
+      this.drawRobotArm();
       var toOutQueue = new Tower();
       //console.log(this.robotArm);
       //toOutQueue.push(new Disk(3));
