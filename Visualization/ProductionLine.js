@@ -62,13 +62,13 @@ class ProductionLine{
     unloadRobot(){
       this.drawRobotArm();
       var toOutQueue = new Tower();
-      //console.log(this.robotArm);
       //toOutQueue.push(new Disk(3));
   		while(this.robotArm.size() !== 0){
           var top = this.robotArm.pop();
           toOutQueue.push(top);
           //console.log(top);
       }
+      console.log(toOutQueue);
   		this.output.push(toOutQueue.copy());
       //console.log("To Out: " + this.output[this.output.length - 1]);
       //console.log("\nCurrent output queue: " + productionLine.getOutput());

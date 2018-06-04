@@ -34,7 +34,7 @@ class Tower {
 
 	display(x,y){
 		for(let i = this.size() - 1; i >= 0; i--){
-			let h = y - (/*i - */(this.size() - 1)) * 15;
+			let h = y - (i * 15 + 15);
 			this.getDisk(i).coord(x,h);
 			this.getDisk(i).display();
 		}

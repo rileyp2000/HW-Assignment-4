@@ -24,7 +24,7 @@ function setup(){
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
   itemsInQueue.position(0, 40);
 
-  //productionLine.run();
+  productionLine.run();
   //var out = "";
   /*for(let i = 0; i < productionLine.output.length; i++){
     /*out += productionLine.output[i];
@@ -44,10 +44,10 @@ function draw(){
     productionLine.output[i].display(30, offset);
     offset += lng;
   }*/
-  //productionLine.drawInput();
+  //productionLine.drawInput();\
   let y = windowHeight * .8 - 80;
   let mid = windowWidth * .5 + 15;
-  t.display(mid, y);
+  //t.display(mid, y);
   fill(0);
   rect(10, windowHeight * .8, windowWidth * .40 - 10, 20, 10);
   rect(windowWidth * .5 - 10, windowHeight * .8 - 80, 50, 75, 10);
