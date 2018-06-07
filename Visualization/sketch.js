@@ -28,14 +28,24 @@ function setup(){
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
   itemsInQueue.position(0, 80);
 
-
+  frameRate(1);
 }
 
 function setRun(){
   productionLine.setRun(true);
 }
 
+function clearDraw(){
+  noStroke();
+  fill(255);
+  rect(0, windowHeight * .8 - 20 , windowWidth * .40, 20);
+  rect(windowWidth * .5 - 60, windowHeight * .8 - 155, 200, 75);
+  rect(windowWidth * .6 + 10, windowHeight * .8 - 20, windowWidth * .3, 20);
+
+}
+
 function run(){
+  clearDraw();
   productionLine.run();
 }
 

@@ -57,7 +57,7 @@ class ProductionLine{
     process(){
       if (this.input.length !== 0){
         var toSend = this.input.shift();
-        //console.log("About to add: " + toSend);
+
         this.robotArm.push(toSend);
       }
       while (this.input.length !== 0 && this.input[0].getRadius() >= this.robotArm.getDisk(this.robotArm.size() - 1).getRadius()){
@@ -67,12 +67,9 @@ class ProductionLine{
       }
       //console.log(this.robotArm);
     }
-    hello(){
-      console.log("Why no work");
-    }
+
     unloadRobot(){
       this.drawRobotArm();
-      setTimeout(this.hello(), 5000);
       var toOutQueue = new Tower();
       //toOutQueue.push(new Disk(3));
   		while(this.robotArm.size() !== 0){
