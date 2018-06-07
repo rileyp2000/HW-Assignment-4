@@ -1,10 +1,13 @@
-var inputField, productionLine, header, itemsInQueue, output,towers,t;
-
+var inputField, productionLine, itemsInQueue, output,towers,t;
+var button, header;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
   header = createElement('h2', "Production Line Visualized");
+  button = createButton('Process Next Disk');
   header.position(0,0);
+  header.center("horizontal");
+  button.position(10, 150);
 
   productionLine = new ProductionLine();
   t = new Tower();
@@ -22,7 +25,7 @@ function setup(){
   //productionLine.addDisk(new Disk(2));
 
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
-  itemsInQueue.position(0, 40);
+  itemsInQueue.position(0, 80);
 
   productionLine.run();
   //var out = "";
