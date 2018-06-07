@@ -10,6 +10,7 @@ function setup(){
   button.position(10, 150);
 
   productionLine = new ProductionLine();
+  button.mousePressed(setRun);
   t = new Tower();
   randomSeed(8675309);
   var ct = 0;
@@ -27,32 +28,30 @@ function setup(){
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
   itemsInQueue.position(0, 80);
 
-  productionLine.run();
-  //var out = "";
-  /*for(let i = 0; i < productionLine.output.length; i++){
-    /*out += productionLine.output[i];
-    out += "\n";
-    //productionLine.output[i].setY(30 * productionLine.output[i].size());
-    productionLine.output[i].display();
-  }*/
 
-  //output = createP("Result: \n" + out);
-  //output.position(0, 60);
 }
 
-function draw(){
-  /*var offset = 50;
-  for(let i = 0; i < productionLine.output.length; i++){
-    let lng = (productionLine.output[i].size() * 25) + 25;
-    productionLine.output[i].display(30, offset);
-    offset += lng;
-  }*/
-  //productionLine.drawInput();\
-  let y = windowHeight * .8 - 80;
-  let mid = windowWidth * .5 + 15;
-  //t.display(mid, y);
+function setRun(){
+  productionLine.setRun(true);
+}
+
+function run(){
+  productionLine.run();
+}
+
+function drawBase(y, mid){
   fill(0);
   rect(10, windowHeight * .8, windowWidth * .40 - 10, 20, 10);
   rect(windowWidth * .5 - 10, windowHeight * .8 - 80, 50, 75, 10);
   rect(windowWidth * .6 + 10, windowHeight * .8, windowWidth * .3, 20, 10);
+}
+
+function draw(){
+
+  //productionLine.drawInput();\
+  let y = windowHeight * .8 - 80;
+  let mid = windowWidth * .5 + 15;
+  drawBase(y, mid);
+  run();
+
 }

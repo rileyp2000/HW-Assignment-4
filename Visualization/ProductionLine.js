@@ -4,6 +4,7 @@ class ProductionLine{
       this.input = [];
       this.output = [];
       this.robotArm = new Tower();
+      this.running = false;
     }
 
     getInput(){
@@ -16,6 +17,10 @@ class ProductionLine{
 
     getRobotArm(){
       return this.robotArm;
+    }
+
+    setRun(r){
+      this.running = r;
     }
 
     addDisk(d){
@@ -38,8 +43,8 @@ class ProductionLine{
       }
     }
 
-    drawOutpu(){
-      
+    drawOutput(){
+
     }
 
     drawRobotArm(){
@@ -77,16 +82,17 @@ class ProductionLine{
       }
       console.log(toOutQueue);
   		this.output.push(toOutQueue.copy());
-      //console.log("To Out: " + this.output[this.output.length - 1]);
-      //console.log("\nCurrent output queue: " + productionLine.getOutput());
     }
 
     run(){
-  		while(this.input.length !== 0){
-  			this.drawInput();
-        setTimeout(this.hello(), 5000);
+      while(this.input.length !== 0 && this.running === true){
+        console.log("new iteration");
+        this.drawInput();
         this.process();
   			this.unloadRobot();
+        this.drawOutput();
+        this.setRun(false);
+        console.log(" d ");
   		}
   	}
 
