@@ -44,7 +44,13 @@ class ProductionLine{
     }
 
     drawOutput(){
-
+      let ouStart = windowWidth * .6;
+      let y = windowHeight * .8;
+      for(let ou of this.output){
+        let len = ou.maxDisk();
+        ou.display(ouStart + (5 * len), y);
+        ouStart += ((10 * len) + 2);
+      }
     }
 
     drawRobotArm(){

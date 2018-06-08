@@ -28,7 +28,8 @@ function setup(){
   itemsInQueue = createP("Put into input: " +productionLine.getInput());
   itemsInQueue.position(0, 80);
 
-  frameRate(1);
+  //frameRate(1);
+  //productionLine.run();
 }
 
 function setRun(){
@@ -38,15 +39,17 @@ function setRun(){
 function clearDraw(){
   noStroke();
   fill(255);
-  rect(0, windowHeight * .8 - 20 , windowWidth * .40, 20);
-  rect(windowWidth * .5 - 60, windowHeight * .8 - 155, 200, 75);
-  rect(windowWidth * .6 + 10, windowHeight * .8 - 20, windowWidth * .3, 20);
+  rect(0, windowHeight * .8 - 20 , windowWidth * .45, 20);
+  rect(windowWidth * .5 - 60, windowHeight * .8 - 155, 201, 75);
+  rect(windowWidth * .6 + 1, windowHeight * .8 - 21, windowWidth * .3, 20);
 
 }
 
-function run(){
+function drawDisks(){
   clearDraw();
-  productionLine.run();
+  productionLine.drawInput();
+  productionLine.drawRobotArm();
+  productionLine.drawOutput();
 }
 
 function drawBase(y, mid){
@@ -57,11 +60,11 @@ function drawBase(y, mid){
 }
 
 function draw(){
-
+  productionLine.run();
   //productionLine.drawInput();\
   let y = windowHeight * .8 - 80;
   let mid = windowWidth * .5 + 15;
   drawBase(y, mid);
-  run();
+  drawDisks();
 
 }

@@ -20,6 +20,16 @@ class Tower {
 		}
 	}
 
+	maxDisk(){
+		let max = this.disks[0];
+		for(let i = 0; i < this.disks.length; i++){
+			if(this.disks[i].compareTo(max) > 0 ){
+				max = this.disks[i];
+			}
+		}
+		return max.getRadius();
+	}
+
 	size(){
 		return this.disks.length;
 	}
