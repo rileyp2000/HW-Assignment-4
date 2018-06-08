@@ -5,6 +5,9 @@ class ProductionLine{
       this.output = [];
       this.robotArm = new Tower();
       this.running = false;
+      this.newRun = 0;
+      //0 for not running, 1 for processing input
+      //2 for sending to output
     }
 
     getInput(){
@@ -19,8 +22,16 @@ class ProductionLine{
       return this.robotArm;
     }
 
+    getRun(){
+      return this.newRun;
+    }
+
     setRun(r){
       this.running = r;
+    }
+
+    setRunn(r){
+      this.newRun = r;
     }
 
     addDisk(d){
@@ -63,7 +74,6 @@ class ProductionLine{
     process(){
       if (this.input.length !== 0){
         var toSend = this.input.shift();
-
         this.robotArm.push(toSend);
       }
       while (this.input.length !== 0 && this.input[0].getRadius() >= this.robotArm.getDisk(this.robotArm.size() - 1).getRadius()){
@@ -75,7 +85,7 @@ class ProductionLine{
     }
 
     unloadRobot(){
-      this.drawRobotArm();
+      //this.drawRobotArm();
       var toOutQueue = new Tower();
       //toOutQueue.push(new Disk(3));
   		while(this.robotArm.size() !== 0){
@@ -83,20 +93,27 @@ class ProductionLine{
           toOutQueue.push(top);
           //console.log(top);
       }
-      console.log(toOutQueue);
+      //console.log(toOutQueue);
   		this.output.push(toOutQueue.copy());
     }
 
     run(){
-      while(this.input.length !== 0 && this.running === true){
-        console.log("new iteration");
+      /*if(this.input.length !== 0 && this.running === true){
+
         this.drawInput();
         this.process();
   			this.unloadRobot();
         this.drawOutput();
         this.setRun(false);
-        console.log(" d ");
-  		}
+  		}*/
+      if(this.input.length !== 0 && this.newRun === 1){
+          this.process();
+          this.newRun = 4;
+      }
+      if(this.newRun === 2){
+        this.unloadRobot();
+        this.newRun = 0;
+      }
   	}
 
     removeTower() {
