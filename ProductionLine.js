@@ -4,7 +4,6 @@ class ProductionLine{
       this.input = [];
       this.output = [];
       this.robotArm = new Tower();
-      this.running = false;
       this.newRun = 0;
       //0 for not running, 1 for processing input
       //2 for sending to output
@@ -26,11 +25,8 @@ class ProductionLine{
       return this.newRun;
     }
 
-    setRun(r){
-      this.running = r;
-    }
 
-    setRunn(r){
+    setRun(r){
       this.newRun = r;
     }
 
@@ -98,14 +94,6 @@ class ProductionLine{
     }
 
     run(){
-      /*if(this.input.length !== 0 && this.running === true){
-
-        this.drawInput();
-        this.process();
-  			this.unloadRobot();
-        this.drawOutput();
-        this.setRun(false);
-  		}*/
       if(this.input.length !== 0 && this.newRun === 1){
           this.process();
           this.newRun = 4;

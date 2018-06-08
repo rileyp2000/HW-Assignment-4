@@ -33,7 +33,7 @@ function setup(){
 }
 
 function setRun(){
-  productionLine.setRunn((productionLine.getRun() + 1) % 3);
+  productionLine.setRun((productionLine.getRun() + 1) % 3);
 }
 
 function clearDraw(){
